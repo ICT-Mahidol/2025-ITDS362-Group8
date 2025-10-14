@@ -48,6 +48,8 @@
           <compilerArgs>
             <arg>-Xpkginfo:always</arg>
           </compilerArgs>
+            <source>15</source>
+            <target>15</target>
         </configuration>
         <executions>
           <!-- Disable the default compile, so the profiles activated below execute -->
@@ -282,7 +284,7 @@
             <dependency>
               <groupId>org.jsoup</groupId>
               <artifactId>jsoup</artifactId>
-              <version>1.21.1</version>
+              <version>1.21.2</version>
               <type>jar</type>
             </dependency>
           </oldVersion>
@@ -382,20 +384,20 @@
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
             <version>3.6.1</version>
-            <executions>
-              <execution>
-                <id>add-java11-test-source</id>
-                <phase>generate-test-sources</phase>
-                <goals>
-                  <goal>add-test-source</goal>
-                </goals>
-                <configuration>
-                  <sources>
-                    <source>${project.basedir}/src/test/java11</source>
-                  </sources>
-                </configuration>
-              </execution>
-            </executions>
+<!--            <executions>-->
+<!--              <execution>-->
+<!--                <id>add-java11-test-source</id>-->
+<!--                <phase>generate-test-sources</phase>-->
+<!--                <goals>-->
+<!--                  <goal>add-test-source</goal>-->
+<!--                </goals>-->
+<!--                <configuration>-->
+<!--                  <sources>-->
+<!--                    <source>${project.basedir}/src/test/java11</source>-->
+<!--                  </sources>-->
+<!--                </configuration>-->
+<!--              </execution>-->
+<!--            </executions>-->
           </plugin>
 
           <plugin>
@@ -408,27 +410,27 @@
                 <phase>compile</phase>
                 <goals>
                   <goal>compile</goal>
-                  <goal>testCompile</goal>
                 </goals>
                 <configuration>
                   <release>8</release>
                 </configuration>
               </execution>
 
-              <execution>
-                <id>compile-java-11</id>
-                <phase>compile</phase>
-                <goals>
-                  <goal>compile</goal>
-                </goals>
-                <configuration>
-                  <release>11</release>
-                  <compileSourceRoots>
-                    <compileSourceRoot>${project.basedir}/src/main/java11</compileSourceRoot>
-                  </compileSourceRoots>
-                  <multiReleaseOutput>true</multiReleaseOutput>
-                </configuration>
-              </execution>
+<!--              <execution>-->
+<!--                <id>compile-java-11</id>-->
+<!--                <phase>compile</phase>-->
+<!--                <goals>-->
+<!--                  <goal>compile</goal>-->
+<!--                  <goal>testCompile</goal>-->
+<!--                </goals>-->
+<!--                <configuration>-->
+<!--                  <release>11</release>-->
+<!--                  <compileSourceRoots>-->
+<!--                    <compileSourceRoot>${project.basedir}/src/main/java11</compileSourceRoot>-->
+<!--                  </compileSourceRoots>-->
+<!--                  <multiReleaseOutput>true</multiReleaseOutput>-->
+<!--                </configuration>-->
+<!--              </execution>-->
             </executions>
           </plugin>
 
