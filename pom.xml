@@ -556,7 +556,7 @@
 
                 <artifactId>japicmp-maven-plugin</artifactId>
 
-                <version>0.24.1</version>
+                <version>0.24.2</version>
 
                 <configuration>
 
