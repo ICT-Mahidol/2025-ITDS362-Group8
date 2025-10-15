@@ -61,7 +61,8 @@
 | Characteristic | B1 | B2 | B3 |
 |---|---|---|---|
 | C1 : type of List input | Null value | Empty List |Lists contain element|
-| C2 : type  of Delimiter input | Null value | Empty Delimiter |Normal Delimiter |
+| C2 : type  of Delimiter input | Null value | Empty Delimiter |Normal Delimiter |  
+
 **Identify possible values**
 | Characteristic | B1 | B2 | B3 |
 |---|---|---|---|
@@ -95,7 +96,8 @@
 **Partition characteristics**
 | Characteristic | B1 | B2 |
 |---|---|---|
-| C1 : String input is empty | True | False |
+| C1 : String input is empty | True | False |  
+
 **Identify possible values**
 | Characteristic | B1 | B2 |
 |---|---|---|
@@ -128,7 +130,8 @@
 **Partition characteristics**
 | Characteristic | B1 | B2 | B3 | B4 | B5 | 
 |---|---|---|---|---|---|
-| C1 : Blank Scraping (type of input string) | Null | Empty | Space only | Escape Character | Regular Character (non-blank)|
+| C1 : Blank Scraping (type of input string) | Null | Empty | Space only | Escape Character | Regular Character (non-blank)|  
+
 **Identify possible values**
 | Characteristic | B1 | B2 | B3 | B4 | B5 | 
 |---|---|---|---|---|---|
@@ -567,6 +570,7 @@ elements.
 - **C2** = Whether the element contains only whitespace text  
 - **C3** = Whether the element is empty or has child elements with no text  
 
+#### Partition Characteristics
 | Characteristic | B1 | B2 |
 |----------------|----|----|
 | C1 = element contains text | True | False |
@@ -621,10 +625,27 @@ elements.
 - **Exceptional behavior:** None
 
 #### 3. Model the input domain
-- **C1** = element has text content  
+- **C1** = Element has text content 
 - **C2** = element has only whitespace  
 - **C3** = element is empty  
-- **C4** = element has text in nested elements  
+- **C4** = element has text in nested elements
+
+#### Partition Characteristics
+| Characteristic | B1 | B2 |
+|----------------|----|----|
+| C1 = element contains text | True | False |
+| C2 = element contains only whitespace | True | False |
+| C3 = element is empty | True | False |
+| Cภ = Nested element contains text | True | False |
+
+#### Identify Possible Values
+| Characteristic | B1 | B2 |
+|----------------|----|----|
+| C1 = element contains text | <div>Hello</div> | <div></div> |
+| C2 = element contains only whitespace | <div> </div> | <div>Hello</div> |
+| C3 = element is empty | <div></div> | <div><span>Hello</span></div> |
+| Cภ = Nested element contains text | <div><span>Hello</span></div> | <div></div> |
+
 
 #### 4. Combine partitions to define test requirements
 - **Assumption:** Base Choice Coverage  
@@ -663,11 +684,19 @@ elements.
 - **C2** = Whether tag is empty string  
 - **C3** = Whether tag is in whitelist  
 
+#### Partition Characteristics
 | Characteristic | B1 | B2 |
 |----------------|----|----|
 | C1 = tag is null | True | False |
 | C2 = tag is empty | True | False |
 | C3 = tag is in whitelist | True | False |
+
+#### Identify Possible Values
+| Characteristic | B1 | B2 |
+|----------------|----|----|
+| C1 = tag is null | null | "p" |
+| C2 = tag is empty | "" | "p" |
+| C3 = tag is in whitelist | "div" | "iframe" |
 
 #### 4. Combine partitions to define test requirements
 - **Assumption:** Base Choice Coverage (BCC)  
@@ -707,6 +736,20 @@ elements.
 - **C1** = tag is null  
 - **C2** = tag is empty  
 - **C3** = tag exists in whitelist  
+
+#### Partition Characteristics
+| Characteristic | B1 | B2 |
+|----------------|----|----|
+| C1 = tag is null | True | False |
+| C2 = tag is empty | True | False |
+| C3 = tag is in whitelist | True | False |
+
+#### Identify Possible Values
+| Characteristic | B1 | B2 |
+|----------------|----|----|
+| C1 = tag is null | null | "p" |
+| C2 = tag is empty | "" | "p" |
+| C3 = tag is in whitelist | "p" ,  | "script" |
 
 #### 4. Combine partitions to define test requirements
 - **Assumption:** All Combinations Coverage   
