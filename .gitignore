@@ -11,3 +11,6 @@ bin/
 .vscode/
 .java-version
 .DS_Store
+project_phase2/K6-Testing/ANALYSIS-TEMPLATE.md
+project_phase2/K6-Testing/README.md
+project_phase2/K6-Testing/setup-test-user.js

@@ -1,0 +1,12 @@
+# K6 Test Results
+results/
+*.json
+*.csv
+*.log
+
+# Node modules (if using k6 extensions)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
