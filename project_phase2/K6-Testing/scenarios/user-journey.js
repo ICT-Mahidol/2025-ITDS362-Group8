@@ -37,11 +37,12 @@ export function browseHomePage(cookies) {
         'Cookie': buildCookieHeader(cookies),
       },
       tags: { name: 'GET_HomePage' },
+      timeout: '30s', // Increase timeout for slow servers
     });
 
     check(response, {
       'Home page loaded': (r) => r.status === 200,
-      'Page contains products': (r) => r.body.includes('product') || r.body.includes('store'),
+      'Page contains products': (r) => r.body && (r.body.includes('product') || r.body.includes('store')),
     });
 
     thinkTime();

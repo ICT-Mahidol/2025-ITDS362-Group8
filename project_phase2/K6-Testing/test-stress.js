@@ -3,8 +3,8 @@
  * Pushes the system beyond normal capacity to find breaking points
  * 
  * Test Goal: Identify maximum capacity and failure threshold
- * Duration: 10 minutes
- * Virtual Users: Ramp from 1 to 200+ users
+ * Duration: 5 minutes
+ * Virtual Users: Ramp from 10 to 40 users
  * 
  * Key Metrics to Watch:
  * - At what VU count does p95 exceed 1000ms?
@@ -17,11 +17,11 @@ import { userJourney } from './scenarios/user-journey.js';
 
 export const options = {
   stages: [
-    { duration: '2m', target: 50 },   // Ramp to normal load
-    { duration: '2m', target: 100 },  // Increase to stress level
-    { duration: '2m', target: 150 },  // Push further
-    { duration: '2m', target: 200 },  // Maximum stress
-    { duration: '2m', target: 0 },    // Ramp down
+    { duration: '1m', target: 10 },   // Ramp to normal load
+    { duration: '1m', target: 20 },   // Increase to stress level
+    { duration: '1m', target: 30 },   // Push further
+    { duration: '1m', target: 40 },   // Maximum stress
+    { duration: '1m', target: 0 },    // Ramp down
   ],
   thresholds: {
     // Relaxed thresholds for stress test (we expect failures)

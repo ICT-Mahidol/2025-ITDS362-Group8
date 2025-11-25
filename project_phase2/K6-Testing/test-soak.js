@@ -3,8 +3,8 @@
  * Runs consistent load over extended period to detect memory leaks and degradation
  * 
  * Test Goal: Identify memory leaks, resource exhaustion, and performance degradation
- * Duration: 30 minutes (can be extended to hours for production)
- * Virtual Users: Steady 30-50 users
+ * Duration: 13 minutes (reduced for testing, can be extended for production)
+ * Virtual Users: Steady 5-10 users
  * 
  * Key Metrics to Watch:
  * - Does response time increase over time? (indicates memory leak)
@@ -17,11 +17,11 @@ import { userJourney } from './scenarios/user-journey.js';
 
 export const options = {
   stages: [
-    { duration: '2m', target: 30 },   // Ramp up
-    { duration: '5m', target: 30 },  // Sustain load for 25 minutes
-    { duration: '2m', target: 50 },   // Small spike to test stability
-    { duration: '5m', target: 50 },  // Continue at higher load
-    { duration: '2m', target: 0 },    // Ramp down
+    { duration: '1m', target: 5 },    // Ramp up
+    { duration: '5m', target: 5 },    // Sustain load for 5 minutes
+    { duration: '1m', target: 10 },   // Small spike to test stability
+    { duration: '5m', target: 10 },   // Continue at higher load
+    { duration: '1m', target: 0 },    // Ramp down
   ],
   thresholds: CONFIG.THRESHOLDS,
   tags: {

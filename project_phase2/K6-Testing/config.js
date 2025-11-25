@@ -4,10 +4,10 @@
 export const CONFIG = {
   // Base URL Configuration
   // Switch between local and production environments
-  BASE_URL: 'http://localhost:8000', // Storefront (Active environment)
-  BACKEND_URL: 'http://localhost:9000', // Medusa Backend API
-  // BASE_URL: 'http://10.34.112.158:8000', // Production storefront (commented out)
-  // BACKEND_URL: 'http://10.34.112.158:9000', // Production backend (commented out)
+  // BASE_URL: 'http://localhost:8000', // Storefront (Active environment)
+  // BACKEND_URL: 'http://localhost:9000', // Medusa Backend API
+  BASE_URL: 'http://10.34.112.158:8000', // Production storefront (commented out)
+  BACKEND_URL: 'http://10.34.112.158:9000', // Production backend (commented out)
   
   // Storefront paths
   PATHS: {
