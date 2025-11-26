@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-11-26T13:56:36.530639" rpa="false" schemaversion="5">
+<suite id="s1" name="addNewProduct" source="Z:\2025-ITDS362-Group8\project_phase2\UI_Testing\test\addNewProduct.robot">
+<kw name="Open Browser To Login Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:36.995529" level="INFO">Opening browser 'Chrome' to base url 'http://10.34.112.158:9000/app/login'.</msg>
+<arg>${WEBSITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-26T13:56:36.994934" elapsed="2.981580"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-26T13:56:39.976937" elapsed="0.122227"/>
+</kw>
+<status status="PASS" start="2025-11-26T13:56:36.993985" elapsed="3.105445"/>
+</kw>
+<test id="s1-t1" name="Add new Product to Product Management" line="19">
+<kw name="Login to Admin panel" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:40.101526" level="INFO">Opening url 'http://10.34.112.158:9000/app/login'</msg>
+<arg>${WEBSITE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-11-26T13:56:40.101297" elapsed="0.570477"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:40.673483" level="INFO">Typing text 'group8@mu-store.local' into text field 'css:input[name="email"]'.</msg>
+<arg>${LOC_AdminLogin.email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:40.672037" elapsed="0.262654"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:40.936190" level="INFO">Typing text 'Bw3$kxN6' into text field 'css:input[name="password"]'.</msg>
+<arg>${LOC_AdminLogin.password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:40.935085" elapsed="0.144412"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:41.081118" level="INFO">Clicking element 'xpath=//*[normalize-space(.)="Continue with Email"]'.</msg>
+<arg>${LOC_AdminLogin.loginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:41.079784" elapsed="0.110592"/>
+</kw>
+<status status="PASS" start="2025-11-26T13:56:40.100835" elapsed="1.089781"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.PageTitle}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:41.191165" elapsed="1.026252"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.ProductNameBar}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:42.218451" elapsed="0.033738"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:42.253774" level="INFO">Clicking element 'xpath=//*[normalize-space(.)="Products"]'.</msg>
+<arg>${LOC_AdminPanel.ProductNameBar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:42.252804" elapsed="0.189335"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.AddProductButton}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:42.442786" elapsed="0.417423"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:42.861557" level="INFO">Clicking element 'xpath=//a[normalize-space(.)="Create"]'.</msg>
+<arg>${LOC_AdminPanel.AddProductButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:42.860642" elapsed="0.177076"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.ProductTitle}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.038259" elapsed="0.344677"/>
+</kw>
+<kw name="Generate Random Product Data">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-11-26T13:56:43.384819" level="INFO">${suffix} = 0129</msg>
+<var>${suffix}</var>
+<arg>4</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.384312" elapsed="0.000564"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-26T13:56:43.385418" level="INFO">${PRODUCT_TITLE} = Test Product Title 0129</msg>
+<var>${PRODUCT_TITLE}</var>
+<arg>Test Product Title ${suffix}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.385078" elapsed="0.000395"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-26T13:56:43.386570" level="INFO">${PRODUCT_SUBTITLE} = Test Product Subtitle 0129</msg>
+<var>${PRODUCT_SUBTITLE}</var>
+<arg>Test Product Subtitle ${suffix}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.385715" elapsed="0.000942"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-26T13:56:43.387327" level="INFO">${PRODUCT_HANDLE} = test-product-handle-0129</msg>
+<var>${PRODUCT_HANDLE}</var>
+<arg>test-product-handle-${suffix}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.386931" elapsed="0.000449"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-26T13:56:43.387930" level="INFO">${PRODUCT_DESC} = This is a test product description 0129.</msg>
+<var>${PRODUCT_DESC}</var>
+<arg>This is a test product description ${suffix}.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.387586" elapsed="0.000386"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Generated product data: ${PRODUCT_TITLE} | ${PRODUCT_HANDLE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.388125" elapsed="0.000392"/>
+</kw>
+<return>
+<value>${PRODUCT_TITLE}</value>
+<value>${PRODUCT_SUBTITLE}</value>
+<value>${PRODUCT_HANDLE}</value>
+<value>${PRODUCT_DESC}</value>
+<status status="PASS" start="2025-11-26T13:56:43.388633" elapsed="0.000111"/>
+</return>
+<msg time="2025-11-26T13:56:43.389286" level="INFO">${PRODUCT_TITLE} = Test Product Title 0129</msg>
+<msg time="2025-11-26T13:56:43.389380" level="INFO">${PRODUCT_SUBTITLE} = Test Product Subtitle 0129</msg>
+<msg time="2025-11-26T13:56:43.389449" level="INFO">${PRODUCT_HANDLE} = test-product-handle-0129</msg>
+<msg time="2025-11-26T13:56:43.389518" level="INFO">${PRODUCT_DESC} = This is a test product description 0129.</msg>
+<var>${PRODUCT_TITLE}</var>
+<var>${PRODUCT_SUBTITLE}</var>
+<var>${PRODUCT_HANDLE}</var>
+<var>${PRODUCT_DESC}</var>
+<status status="PASS" start="2025-11-26T13:56:43.383729" elapsed="0.005842"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:43.391137" level="INFO">Sending key(s) ('Test Product Title 0129',) to xpath=//label[normalize-space(.)="Title"]/following::input[1] element.</msg>
+<msg time="2025-11-26T13:56:43.953834" level="INFO">Sending keys Test Product Title 0129</msg>
+<arg>${LOC_AdminPanel.ProductTitle}</arg>
+<arg>${PRODUCT_TITLE}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-26T13:56:43.390037" elapsed="0.790138"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:44.181891" level="INFO">Sending key(s) ('Test Product Subtitle 0129',) to xpath=//label[normalize-space(.)="Subtitle"]/following::input[1] element.</msg>
+<msg time="2025-11-26T13:56:44.480277" level="INFO">Sending keys Test Product Subtitle 0129</msg>
+<arg>${LOC_AdminPanel.ProductSubTitle}</arg>
+<arg>${PRODUCT_SUBTITLE}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-26T13:56:44.181016" elapsed="0.539495"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:44.722079" level="INFO">Sending key(s) ('test-product-handle-0129',) to xpath=//label[normalize-space(.)="Handle"]/following::input[1] element.</msg>
+<msg time="2025-11-26T13:56:45.028816" level="INFO">Sending keys test-product-handle-0129</msg>
+<arg>${LOC_AdminPanel.ProductHandle}</arg>
+<arg>${PRODUCT_HANDLE}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-26T13:56:44.720958" elapsed="0.536251"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:45.259162" level="INFO">Sending key(s) ('This is a test product description 0129.',) to xpath=//label[normalize-space(.)="Description"]/following::textarea[1] element.</msg>
+<msg time="2025-11-26T13:56:45.570727" level="INFO">Sending keys This is a test product description 0129.</msg>
+<arg>${LOC_AdminPanel.ProductDescription}</arg>
+<arg>${PRODUCT_DESC}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-26T13:56:45.257855" elapsed="0.646364"/>
+</kw>
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2025-11-26T13:56:45.905172" level="INFO">${IMAGE_PATH} = Z:\2025-ITDS362-Group8\project_phase2\UI_Testing\resources\mahidol-sweater.jpg</msg>
+<var>${IMAGE_PATH}</var>
+<arg>Z:\\2025-ITDS362-Group8\\project_phase2\\UI_Testing\\test/../resources/mahidol-sweater.jpg</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2025-11-26T13:56:45.904807" elapsed="0.000435"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:45.920277" level="INFO">${file_input} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.67")&gt;</msg>
+<var>${file_input}</var>
+<arg>${LOC_AdminPanel.ProductImage}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:45.905593" elapsed="0.014764"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:45.921983" level="INFO">Executing JavaScript:
+arguments[0].removeAttribute('hidden');arguments[0].style.display='block';arguments[0].style.visibility='visible';arguments[0].disabled=false;return;
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.67")&gt;'</msg>
+<arg>arguments[0].removeAttribute('hidden');</arg>
+<arg>arguments[0].style.display='block';</arg>
+<arg>arguments[0].style.visibility='visible';</arg>
+<arg>arguments[0].disabled=false;</arg>
+<arg>return;</arg>
+<arg>ARGUMENTS</arg>
+<arg>${file_input}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-26T13:56:45.920823" elapsed="0.009571"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-26T13:56:46.431814" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-26T13:56:45.931006" elapsed="0.500996"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:46.433995" level="INFO">Sending Z:\2025-ITDS362-Group8\project_phase2\UI_Testing\resources\mahidol-sweater.jpg to browser.</msg>
+<arg>${LOC_AdminPanel.ProductImage}</arg>
+<arg>${IMAGE_PATH}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:46.432867" elapsed="0.067397"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:46.501910" level="INFO">Executing JavaScript:
+return arguments[0].files.length;
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.67")&gt;'</msg>
+<msg time="2025-11-26T13:56:46.515915" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>return arguments[0].files.length;</arg>
+<arg>ARGUMENTS</arg>
+<arg>${file_input}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-26T13:56:46.501189" elapsed="0.014799"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-26T13:56:46.516999" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-26T13:56:46.516653" elapsed="0.000459"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-26T13:56:48.518072" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-26T13:56:46.517533" elapsed="2.000743"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:48.519785" level="INFO">Clicking element 'xpath=(//button[normalize-space(.)="Continue"])[last()]'.</msg>
+<arg>${LOC_AdminPanel.ContinueButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:48.518770" elapsed="0.248638"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.DiscountCheckbox}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:48.767964" elapsed="0.085847"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.Type}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:48.854305" elapsed="0.085693"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:48.941669" level="INFO">Typing text 'Test Type' into text field 'xpath=//label[normalize-space(.)="Type"]/ancestor::div[contains(@class,"flex flex-col space-y-2")][1]//input[@name="type_id"]'.</msg>
+<arg>${LOC_AdminPanel.Type}</arg>
+<arg>Test Type</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:48.940858" elapsed="0.235945"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.Collection}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.177312" elapsed="0.049060"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:49.229167" level="INFO">Clicking element 'xpath=//label[normalize-space(.)="Collection"]/ancestor::div[contains(@class,"flex flex-col space-y-2")][1]//input[@name="collection_id"]'.</msg>
+<arg>${LOC_AdminPanel.Collection}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.228325" elapsed="0.144707"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.Collection_Jacket}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.373630" elapsed="0.030022"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:49.405184" level="INFO">Clicking element 'xpath=//div[@role="option"]//span[normalize-space(.)="jacket"]'.</msg>
+<arg>${LOC_AdminPanel.Collection_Jacket}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.404377" elapsed="0.133508"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.Categories}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.538428" elapsed="0.074094"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:49.614293" level="INFO">Typing text 'Test Category' into text field 'xpath=//label[normalize-space(.)="Categories"]/ancestor::div[contains(@class,"flex flex-col space-y-2")][1]//input[@name="categories"]'.</msg>
+<arg>${LOC_AdminPanel.Categories}</arg>
+<arg>Test Category</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.613380" elapsed="0.191313"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.Tags}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.805247" elapsed="0.030121"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.ShippingProfileInput}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-26T13:56:49.835851" elapsed="0.304233"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.ShippingProfileInput}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:50.140685" elapsed="0.034210"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:50.176380" level="INFO">Clicking element 'xpath=//input[@name="shipping_profile_id"]'.</msg>
+<arg>${LOC_AdminPanel.ShippingProfileInput}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:50.175565" elapsed="0.152622"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:50.329721" level="INFO">Sending key(s) ('ARROW_DOWN',) to xpath=//input[@name="shipping_profile_id"] element.</msg>
+<msg time="2025-11-26T13:56:50.654512" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg time="2025-11-26T13:56:50.654638" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>${LOC_AdminPanel.ShippingProfileInput}</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-11-26T13:56:50.328646" elapsed="0.345191"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:50.675654" level="INFO">Clicking element 'xpath=//div[@role="listbox"]//span[normalize-space(.)="Default Shipping Profile"]'.</msg>
+<arg>${LOC_AdminPanel.ShippingProfileOption}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:50.674388" elapsed="0.171762"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:50.847712" level="INFO">Clicking element 'xpath=(//button[normalize-space(.)="Continue"])[last()]'.</msg>
+<arg>${LOC_AdminPanel.ContinueButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:50.846769" elapsed="0.318001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.InventoryCheckbox}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:56:51.165231" elapsed="0.039850"/>
+</kw>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.PriceEUR}</arg>
+<arg>49.99</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:51.205576" elapsed="0.181199"/>
+</kw>
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.PriceUSD}</arg>
+<arg>59.99</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:51.387329" elapsed="0.147268"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:56:51.535911" level="INFO">Clicking element 'xpath=//button[@data-name="publish-button"]'.</msg>
+<arg>${LOC_AdminPanel.PublishButtonByData}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:56:51.535053" elapsed="0.184886"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-26T13:57:21.721600" level="INFO">Slept 30 seconds.</msg>
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-26T13:56:51.720624" elapsed="30.001268"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.AddMediaLink}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:57:21.722506" elapsed="0.029921"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:21.754233" level="INFO">Clicking element 'xpath=//a[normalize-space(.)="Add media"]'.</msg>
+<arg>${LOC_AdminPanel.AddMediaLink}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:57:21.753121" elapsed="0.164420"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.MediaSectionTitle}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:57:21.918050" elapsed="0.223129"/>
+</kw>
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2025-11-26T13:57:22.142204" level="INFO">${IMAGE_PATH} = Z:\2025-ITDS362-Group8\project_phase2\UI_Testing\resources\mahidol-sweater.jpg</msg>
+<var>${IMAGE_PATH}</var>
+<arg>Z:\\2025-ITDS362-Group8\\project_phase2\\UI_Testing\\test/../resources/mahidol-sweater.jpg</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.141756" elapsed="0.000507"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:22.155911" level="INFO">${file_input} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.132")&gt;</msg>
+<var>${file_input}</var>
+<arg>${LOC_AdminPanel.MediaUploadInput}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.142659" elapsed="0.013325"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:22.156843" level="INFO">Executing JavaScript:
+arguments[0].removeAttribute('hidden');arguments[0].style.display='block';arguments[0].style.visibility='visible';arguments[0].disabled=false;return;
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.132")&gt;'</msg>
+<arg>arguments[0].removeAttribute('hidden');</arg>
+<arg>arguments[0].style.display='block';</arg>
+<arg>arguments[0].style.visibility='visible';</arg>
+<arg>arguments[0].disabled=false;</arg>
+<arg>return;</arg>
+<arg>ARGUMENTS</arg>
+<arg>${file_input}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.156308" elapsed="0.011437"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-26T13:57:22.668806" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.168196" elapsed="0.500784"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:22.670549" level="INFO">Sending Z:\2025-ITDS362-Group8\project_phase2\UI_Testing\resources\mahidol-sweater.jpg to browser.</msg>
+<arg>${LOC_AdminPanel.MediaUploadInput}</arg>
+<arg>${IMAGE_PATH}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.669755" elapsed="0.076339"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:22.747780" level="INFO">Executing JavaScript:
+return arguments[0].files.length;
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.132")&gt;'</msg>
+<msg time="2025-11-26T13:57:22.755335" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>return arguments[0].files.length;</arg>
+<arg>ARGUMENTS</arg>
+<arg>${file_input}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.746730" elapsed="0.008676"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-26T13:57:22.756274" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.755857" elapsed="0.000550"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-26T13:57:23.758053" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-26T13:57:22.757242" elapsed="1.000977"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOC_AdminPanel.MediaSaveButton}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-26T13:57:23.758692" elapsed="0.025254"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:23.799379" level="INFO">${save_btn} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.134")&gt;</msg>
+<var>${save_btn}</var>
+<arg>${LOC_AdminPanel.MediaSaveButton}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2025-11-26T13:57:23.784465" elapsed="0.015000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-26T13:57:23.800809" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a6e1c147707b73f9d3e7dcd97e71f952", element="f.BDBB325867F55CE839D32E1B661CAFFD.d.09A76E1499037EE07DCFC8017BAABF0B.e.134")&gt;'</msg>
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${save_btn}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-26T13:57:23.799986" elapsed="0.019215"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-26T13:57:26.820063" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-26T13:57:23.819636" elapsed="3.000588"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-11-26T13:57:26.973008" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-11-26T13:57:26.821018" elapsed="0.152822"/>
+</kw>
+<status status="PASS" start="2025-11-26T13:56:40.099593" elapsed="46.874699"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-26T13:57:26.975791" elapsed="3.369937"/>
+</kw>
+<status status="PASS" start="2025-11-26T13:56:36.534340" elapsed="53.811591"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="addNewProduct" id="s1" pass="1" fail="0" skip="0">addNewProduct</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-11-26T13:56:36.524223" level="WARN">Error in file 'Z:\2025-ITDS362-Group8\project_phase2\UI_Testing\test\addNewProduct.robot' on line 145: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
